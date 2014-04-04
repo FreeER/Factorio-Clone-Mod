@@ -1,0 +1,6 @@
+0.1.1
+	fixed release variable not being initialized (thus crashing)
+0.1.2
+	upped the health of the remains so that they are less likely to be destroyed before you reach them. at least I think that's what made them dissapear :)
+	Added Locales
+    	fixed a bug where I forgot to check if game.player.character existed before indexing it
