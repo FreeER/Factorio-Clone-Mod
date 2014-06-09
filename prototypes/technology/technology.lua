@@ -1,4 +1,4 @@
-if data.raw.item["dna"] then dnaPrereqs = {"dna"} else dnaPrereqs = {"alien-technology"} end
+if data.raw.fluid["dna"] then dnaPrereqs = {"dna"} else dnaPrereqs = {"alien-technology"} end
 
 data:extend({
   {
@@ -7,7 +7,8 @@ data:extend({
     icon = "__clone__/graphics/technology/cloning-tank.png",
     effects =
     {
-      {type = "unlock-recipe", recipe = "cloning-tank"}
+      {type = "unlock-recipe", recipe = "cloning-tank"},
+      {type = "unlock-recipe", recipe = "maintain_clone"}
     },
     prerequisites = dnaPrereqs,
     unit =

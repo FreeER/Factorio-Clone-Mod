@@ -1,6 +1,12 @@
 0.1.1
 	fixed release variable not being initialized (thus crashing)
 0.1.2
-	upped the health of the remains so that they are less likely to be destroyed before you reach them. at least I think that's what made them dissapear :)
+	upped the health of the remains so that they are less likely to be destroyed before you reach them. at least I think that's what made them disappear :)
 	Added Locales
     	fixed a bug where I forgot to check if game.player.character existed before indexing it
+0.1.3
+    ?
+0.1.4
+    Changed cloning tank to require energy and (if dna is detected) dna
+        This means you can not simply build and forget about them, you must feed them the needed ingredients to maintain their clones (and get rid of the waste they produce, don't worry it stacks to 1000)
+    Moved cloning tank from 'storage' item subgroup to 'defensive-structure' (combat) and waste to 'intermediate-products'

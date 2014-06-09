@@ -1,14 +1,18 @@
-if data.raw.item.dna then
-      dnaIngredients =
+local dnaIngredients
+local dnaCategory
+if data.raw.fluid["dna"] then
+    dnaIngredients =
       {
-        {"iron-plate", 50}, {"science-pack-1", 20}, {"dna", 100}, {"computer", 1}
+        {"iron-plate", 50}, {"science-pack-1", 20}, {type="fluid", name="dna", amount=100}, {"computer", 1}
       }
-    else
-      dnaIngredients =
-        {
-          {"iron-plate", 50}, {"science-pack-1", 20}
-        }
-    end
+      dnaCategory = "crafting-with-fluid"
+  else
+    dnaIngredients =
+      {
+        {"iron-plate", 50}, {"science-pack-1", 20}
+      }
+    dnaCategory = "advanced-crafting"
+end
 
 data:extend(
 {
@@ -17,7 +21,21 @@ data:extend(
     name = "cloning-tank",
     enabled = "false",
     ingredients = dnaIngredients,
+    category = dnaCategory,
     time_needed = 20,
     result = "cloning-tank"
+  },
+  {
+    type = "recipe-category",
+    name = "cloning"
+  },
+  {
+    type = "recipe",
+    name = "maintain_clone",
+    enabled = "false",
+    ingredients = {{type="fluid", name="dna", amount=1}},
+    category = "cloning",
+    time_needed = 10,
+    result = "Clonewaste"
   }
 })
